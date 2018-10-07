@@ -1,0 +1,16 @@
+$max-page-width: 1200px;
+
+.app {
+  height: 100%;
+  max-width: $max-page-width;
+  margin: 0 auto;
+
+  .page-content {
+    padding: 100px 5% 50px;
+  }
+  .dark-or-light-btn {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+  }
+}
