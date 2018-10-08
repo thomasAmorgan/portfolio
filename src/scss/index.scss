@@ -1,12 +1,12 @@
-@import "./colors";
-@import "./fonts";
+@import "./variables";
+@import "./animations";
 @import "App";
 @import "./pages/home";
 @import "./components/navbar";
 @import "./components/matted-photo";
+@import "./components/contact-form";
 
 html {
-  background: $background-grey;
   height: 100%;
 }
 
@@ -15,7 +15,6 @@ body {
   margin: 0;
   height: 100%;
   font-family: $body-font;
-  color: #fff;
 }
 
 #root {

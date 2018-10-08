@@ -15,7 +15,7 @@
   }
 
   .section {
-    margin: 15% 0 0 0;
+    margin: 10% 0 0 0;
     display: flex;
 
     .text-section {
@@ -36,6 +36,40 @@
       display: flex;
       flex: 1;
       flex-direction: column;
+      align-items: center;
+    }
+  }
+  .contact-form {
+    margin: 10% 0 0 0;
+  }
+}
+
+@media (max-width: $phone) {
+  .home {
+    .matte-picture {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 85%;
+      }
+    }
+
+    .section {
+      flex-direction: column;
+
+      .text-section {
+        padding: 0;
+      }
+
+      .matte-picture {
+        margin: 25px 0 0 0;
+
+        img {
+          width: 50%;
+        }
+      }
     }
   }
 }

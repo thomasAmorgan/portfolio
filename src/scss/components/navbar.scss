@@ -4,8 +4,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: $max-page-width;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 
   .navbar-blur {
     width: 100%;
@@ -20,24 +19,44 @@
 
   .navbar-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 100%;
-    padding: 0 5%;
+    max-width: $max-page-width;
+    margin: 0 auto;
 
-    .navlink {
-      text-decoration: none;
-      color: $white;
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      width: 100%;
 
-      &:hover,
-      &:focus {
+      .navlink {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+
+      .dark-text {
+        color: $white;
+      }
+
+      .light-text {
+        color: $black;
+      }
+
+      .navlink-active {
         text-decoration: underline;
+        text-decoration-style: double;
       }
     }
-
-    .navlink-active {
-      text-decoration: underline;
-      text-decoration-style: double;
-    }
   }
+}
+.nav-dark {
+  background: $trans-grey;
+}
+.nav-light {
+  background: $trans-white;
 }
