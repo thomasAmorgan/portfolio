@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 import MattedPhoto from "../components/MattedPhoto";
-import LF from "../images/LF004_web.jpg";
+import lightningField from "../images/LF004_web.jpg";
 import portrait from "../images/portrait_web.jpg";
 import ContactForm from "../components/ContactForm";
 
@@ -19,11 +19,11 @@ export default class Home extends Component {
       >
         <div className="home">
           <div className="tagline">
-            <h1>I'm Thomas Morgan,</h1>
-            <p>a software engineer, designer, & Photographer.</p>
+            <h1>Thomas Morgan,</h1>
+            <p>software engineer, designer, & photographer.</p>
           </div>
 
-          <MattedPhoto image={LF} />
+          <MattedPhoto image={lightningField} />
 
           <div className="section">
             <div className="text-section">

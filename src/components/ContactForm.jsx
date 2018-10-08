@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export default class ContactForm extends Component {
+class ContactForm extends Component {
   constructor() {
     super();
 
@@ -40,6 +41,8 @@ export default class ContactForm extends Component {
   };
 
   render() {
+    let darkOrLightClass = this.props.darkMode ? "input-light" : "input-dark";
+
     return (
       <div className="contact-form">
         <h2>Contact</h2>
@@ -48,6 +51,7 @@ export default class ContactForm extends Component {
           <input
             name="fullName"
             type="text"
+            className={darkOrLightClass}
             required
             onChange={this.handleChange}
           />
@@ -56,6 +60,7 @@ export default class ContactForm extends Component {
           <input
             name="email"
             type="email"
+            className={darkOrLightClass}
             required
             onChange={this.handleChange}
           />
@@ -64,16 +69,30 @@ export default class ContactForm extends Component {
           <input
             name="subject"
             type="text"
+            className={darkOrLightClass}
             required
             onChange={this.handleChange}
           />
 
           <label htmlFor="message">Message</label>
-          <textarea name="message" required onChange={this.handleChange} />
+          <textarea
+            name="message"
+            required
+            onChange={this.handleChange}
+            className={darkOrLightClass}
+          />
 
-          <input type="submit" />
+          <input type="submit" className={darkOrLightClass} />
         </form>
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    darkMode: state.darkOrLight.darkMode
+  };
+}
+
+export default connect(mapStateToProps)(ContactForm);

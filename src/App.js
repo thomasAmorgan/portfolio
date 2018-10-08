@@ -7,31 +7,16 @@ import Projects from "./pages/Projects";
 import Photography from "./pages/Photography";
 import Design from "./pages/Design";
 import Resume from "./pages/Resume";
+import { connect } from "react-redux";
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      darkmode: true,
-      btnClass: "dark-or-light-btn light",
-      appTheme: "app dark"
-    };
-
-    this.darkModeSwitch = this.darkModeSwitch.bind(this);
-  }
-
-  darkModeSwitch = () => {
-    this.setState(state => ({
-      darkmode: !state.darkmode,
-      btnClass: !state.darkmode
-        ? "dark-or-light-btn light"
-        : "dark-or-light-btn dark",
-      appTheme: !state.darkmode ? "app dark" : "app light"
-    }));
-  };
-
   render() {
+    let theme = this.props.darkMode ? "app dark" : "app light";
+    let btnClass = this.props.darkMode
+      ? "dark-or-light-btn light"
+      : "dark-or-light-btn dark";
+    let btnText = this.props.darkMode ? "light" : "dark";
+
     return (
       <CSSTransitionGroup
         transitionName="fade"
@@ -40,8 +25,8 @@ class App extends Component {
         transitionLeaveTimeout={200}
         transitionAppear={true}
       >
-        <div className={this.state.appTheme}>
-          <Navbar darkmode={this.state.darkmode} />
+        <div className={theme}>
+          <Navbar />
           <div className="all-content">
             <div className="page-content">
               <Switch>
@@ -54,8 +39,11 @@ class App extends Component {
             </div>
           </div>
 
-          <div className={this.state.btnClass} onClick={this.darkModeSwitch}>
-            {this.state.darkmode ? "light" : "dark"}
+          <div
+            className={btnClass}
+            onClick={this.props.darkMode ? this.props.light : this.props.dark}
+          >
+            {btnText}
           </div>
         </div>
       </CSSTransitionGroup>
@@ -63,4 +51,20 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    darkMode: state.darkOrLight.darkMode
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dark: () => dispatch({ type: "DARK" }),
+    light: () => dispatch({ type: "LIGHT" })
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

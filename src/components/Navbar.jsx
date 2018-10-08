@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   render() {
-    let darkmode = this.props.darkmode;
+    let darkmode = this.props.darkMode;
     let linkClass = darkmode ? "navlink light-text" : "navlink dark-text";
     let navbarClass = darkmode ? "navbar nav-light" : "navbar nav-dark";
 
@@ -47,3 +48,11 @@ export default class Navbar extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    darkMode: state.darkOrLight.darkMode
+  };
+}
+
+export default connect(mapStateToProps)(Navbar);
