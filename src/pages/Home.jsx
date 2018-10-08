@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 import MattedPhoto from "../components/MattedPhoto";
 import lightningField from "../images/LF004_web.jpg";
-import portrait from "../images/portrait_web.jpg";
+import portrait from "../images/portrait_web2.jpg";
 import ContactForm from "../components/ContactForm";
 
 export default class Home extends Component {

@@ -8,6 +8,7 @@ import Photography from "./pages/Photography";
 import Design from "./pages/Design";
 import Resume from "./pages/Resume";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -64,7 +65,9 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);
