@@ -44,11 +44,16 @@
       -webkit-border-radius: 0;
       border-radius: 0;
       -webkit-appearance: initial;
+      height: 50px;
 
       &:hover,
       &:focus {
         text-decoration: underline;
         cursor: pointer;
+        transform: scale(1.05);
+        transition: ease;
+        transition-property: all;
+        transition-duration: 200ms;
       }
     }
     .input-dark {

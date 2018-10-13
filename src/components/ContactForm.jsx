@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as emailjs from "emailjs-com";
 
 class ContactForm extends Component {
   constructor() {
@@ -22,15 +23,21 @@ class ContactForm extends Component {
     this.setState(newState);
   };
 
-  handleSubmit = (e, message) => {
+  handleSubmit = e => {
     e.preventDefault();
 
-    // let formData = {
-    //   formName: this.state.name,
-    //   formEmail: this.state.email,
-    //   formSubject: this.state.subject,
-    //   formMessage: this.state.message
-    // };
+    const serviceID = "gmail";
+    const templateID = "template_cxiSiQoL";
+    const userID = "user_OKncHQwKmN3cW8o9LyGz5";
+
+    emailjs.sendForm(serviceID, templateID, "#contact-form", userID).then(
+      res => {
+        console.log("Success: ", res.status, res.text);
+      },
+      error => {
+        console.log("Failed: ", error);
+      }
+    );
 
     this.setState({
       fullName: "",
@@ -46,12 +53,13 @@ class ContactForm extends Component {
     return (
       <div className="contact-form">
         <h2>Contact</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form id="contact-form" onSubmit={this.handleSubmit}>
           <label htmlFor="fullName">Full Name</label>
           <input
             name="fullName"
             type="text"
             className={darkOrLightClass}
+            placeholder="full name..."
             required
             onChange={this.handleChange}
           />
@@ -61,6 +69,7 @@ class ContactForm extends Component {
             name="email"
             type="email"
             className={darkOrLightClass}
+            placeholder="email..."
             required
             onChange={this.handleChange}
           />
@@ -70,6 +79,7 @@ class ContactForm extends Component {
             name="subject"
             type="text"
             className={darkOrLightClass}
+            placeholder="subject..."
             required
             onChange={this.handleChange}
           />
@@ -80,6 +90,7 @@ class ContactForm extends Component {
             required
             onChange={this.handleChange}
             className={darkOrLightClass}
+            placeholder="message..."
           />
 
           <input type="submit" className={darkOrLightClass} />

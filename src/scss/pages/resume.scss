@@ -1,0 +1,107 @@
+.resume {
+  display: flex;
+  flex-flow: column;
+  max-width: 850px;
+  margin: 0 auto;
+
+  h5 {
+    font-style: italic;
+  }
+
+  .personal-info {
+    margin: $section-margin;
+
+    h4 {
+      a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover,
+        &focus {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .find-me {
+      display: flex;
+      justify-content: space-between;
+    }
+    .resume-links {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+
+      a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .academic-experience {
+    margin: $section-margin;
+    .academic-school {
+      display: flex;
+      justify-content: space-between;
+    }
+    .academic-degrees {
+      p:first-child {
+        font-weight: bold;
+      }
+    }
+    .academic-honors {
+      font-style: italic;
+    }
+  }
+  .skills-group {
+    margin: $section-margin;
+
+    .skills-lists {
+      display: flex;
+      justify-content: space-around;
+
+      .skills-developer {
+        display: flex;
+        flex-flow: column;
+      }
+      .skills-design-photo {
+        display: flex;
+        flex-flow: column;
+      }
+    }
+  }
+
+  .work-experience-group {
+    margin: $section-margin;
+
+    .work-experience-text {
+      .work-header {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .leadership-experience-group {
+    margin: $section-margin;
+
+    .leadership-experience-text {
+      .leadership-header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .leadership-list {
+        .leadership-list-header {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
