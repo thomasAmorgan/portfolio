@@ -19,3 +19,62 @@
   opacity: 1;
   transition: opacity 300ms ease-in;
 }
+
+.dark {
+  transition: ease-in;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+
+.light {
+  transition: ease-in;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+
+.matte-dark-border {
+  img {
+    transition: ease-in;
+    transition-property: all;
+    transition-duration: 500ms;
+  }
+}
+.matte-light-border {
+  img {
+    transition: ease-in;
+    transition-property: all;
+    transition-duration: 500ms;
+  }
+}
+.input-dark {
+  transition: ease-in;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+.input-light {
+  transition: ease-in;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+.nav-dark {
+  transition: ease-in;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+.nav-light {
+  transition: ease-in;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+.navbar-container {
+  .dark-text {
+    transition: ease-in;
+    transition-property: all;
+    transition-duration: 500ms;
+  }
+  .light-text {
+    transition: ease-in;
+    transition-property: all;
+    transition-duration: 500ms;
+  }
+}

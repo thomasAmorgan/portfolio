@@ -4,13 +4,22 @@
     box-shadow: 7px 10px 25px 10px rgba(0, 0, 0, 0.25);
   }
 }
-.matte-dark {
+.matte-dark-border {
   img {
     border: 25px solid $background-grey;
   }
 }
-.matte-light {
+.matte-light-border {
   img {
     border: 25px solid $off-white;
   }
+}
+.matte-caption {
+  padding: 25px 25px;
+  margin: 25px 0 0 0;
+  width: max-content;
+  max-width: 250px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 7px 10px 25px 10px rgba(0, 0, 0, 0.25);
 }
